@@ -97,13 +97,13 @@
 
             if (heading != null) {
                 var planeIconHeading = L.icon({
-                    iconUrl: '{{ site.baseurl}}/static/images/symbols/basic-plane-black.svg',
+                    iconUrl: '{{ site.url}}/static/images/symbols/basic-plane-black.svg',
                     iconSize: [20, 20]
                 });
                 return L.rotatedMarker(latlng, {icon: planeIconHeading, angle: heading});
             } else {
                 var planeIconNoHeading = L.icon({
-                    iconUrl: '{{ site.baseurl}}/static/images/symbols/basic-plane-no-heading-black.svg',
+                    iconUrl: '{{ site.url}}/static/images/symbols/basic-plane-no-heading-black.svg',
                     iconSize: [20, 20]
                 });
                 return L.marker(latlng, {icon: planeIconNoHeading});
@@ -156,7 +156,7 @@
             }
         }
 
-        popupContent += "<img src='{{ site.baseurl}}/static/images/arrow.png' hspace='5'/>"
+        popupContent += "<img src='{{ site.url}}/static/images/arrow.png' hspace='5'/>"
 
 		if (feature.properties && feature.properties.arrival) {
 			if(feature.properties.arrival.aerodrome)  {
@@ -167,7 +167,7 @@
 			}
 		}
 
-		layer.bindPopup("<img src='{{ site.baseurl}}/static/images/operators/"+ feature.properties.airline +".png' <br/>" + popupContent);
+		layer.bindPopup("<img src='{{ site.url}}/static/images/operators/"+ feature.properties.airline +".png' <br/>" + popupContent);
 	}	
 
     //Adding a tile to display on the map.
